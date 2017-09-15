@@ -1,0 +1,20 @@
+{
+  "name": "js-performance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel ./src -d ./build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://komono@bitbucket.org/komono/js-performance.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/komono/js-performance#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0"
+  }
+}
