@@ -61,9 +61,10 @@
 
 
 
-  const res = fTestDouble(test.first, test.second, N_INNER_REPETITIONS, N_LOOP_REPETITIONS);
+  const res = fTestDouble(test.first, test.second, N_INNER_REPETITIONS, N_LOOP_REPETITIONS),
+    ratio = (100 * res.avDuration1 / res.avDuration2).toFixed(2);
 
-  console.log("Double test:", res.avDuration1, res.avDuration2);
+  console.log("Double test:", res.avDuration1, res.avDuration2, ratio + '%');
 
 })();
 
