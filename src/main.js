@@ -1,4 +1,22 @@
+(function () {
+  var Handlebars = require('handlebars');
 
+  var tplFunc = require("../assets/templates/test-container.hbs");
+  
+
+  //var template = Handlebars.compile(tplFunc);
+
+  var context = {title: "My New Post", body: "This is my first post!"};
+  var html    = tplFunc(context);
+
+
+  document.getElementById('app').innerHTML = html;
+})();
+
+
+
+
+/*
 
 (function () {
   const test = {
@@ -67,3 +85,5 @@
   console.log("Double test:", res.avDuration1, res.avDuration2, ratio + '%');
 
 })();
+
+*/

@@ -48,5 +48,10 @@ module.exports = {
   output: {
     filename: 'src/[name].bundle.js',
     path: path.resolve(__dirname, 'deploy')
+  },
+  resolve: {
+    alias: {
+       handlebars: 'handlebars/dist/handlebars.min.js'
+    }
   }
 };
