@@ -5,12 +5,15 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: './src/main.js'
+    main: './src/js/main.js'
   },
   module: {
     loaders: [{
       test: /\.hbs$/,
       loader: 'handlebars-loader'
+    }, {
+      test: /\.scss$/,
+      loaders: ['style-loader', 'css-loader', 'sass-loader']
     }]
   },
   plugins: [
@@ -46,7 +49,7 @@ module.exports = {
     })
   ],
   output: {
-    filename: 'src/[name].bundle.js',
+    filename: 'assets/[name].bundle.js',
     path: path.resolve(__dirname, 'deploy')
   },
   resolve: {

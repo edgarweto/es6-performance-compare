@@ -1,17 +1,38 @@
-(function () {
-  var Handlebars = require('handlebars');
 
-  var tplFunc = require("../assets/templates/test-container.hbs");
+import {tests as performanceTests} from './performanceTests.js';
+import Handlebars from 'handlebars';
+
+//require("../css/test-container.scss");
+
+import style from '../styles/main.scss';
+
+buildApp(performanceTests);
+
+
+function buildApp(tests) {
   
+  // Obtain a suitable param object for each handlebar test and
+  // group for the app template tpl-test-container
+  var testsContext = tests.map(buildTestTplContext),
+    appContext = {
+      numTests: tests.length,
+      testsContext: testsContext
+    };
+  
+  var testContainerToHtml = require("../templates/tpl-test-container.hbs");
+  document.getElementById('app').innerHTML = testContainerToHtml(appContext);
+}
 
-  //var template = Handlebars.compile(tplFunc);
+function buildTestTplContext(test, idx) {
+  return {
+    title: test.title,
+    code1: test.code1,
+    code2: test.code2
+  };
+}
 
-  var context = {title: "My New Post", body: "This is my first post!"};
-  var html    = tplFunc(context);
 
 
-  document.getElementById('app').innerHTML = html;
-})();
 
 
 

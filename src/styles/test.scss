@@ -1,0 +1,41 @@
+.test {
+  background-color: #EEE;
+  
+  margin: 6px 0;
+
+  .test-header {
+    font-weight: bold;
+    padding: 2px 4px;
+  }
+  .test-body {
+    .test-description {
+      text-align: center;
+
+      .test-code {
+        text-align: initial;
+        display: inline-block;
+        padding: 4px;
+        margin: 0;
+        border: 1px solid #ccc;
+        width: 46%;
+      }
+    }
+
+    .test-results {
+      text-align: center;
+
+      .test-result {
+        display: inline-block;
+        padding: 4px;
+        margin: 0;
+        border: 1px solid #ccc;
+        width: 46%;
+      }
+    }
+  }
+
+  .test-footer {
+    padding: 4px 12px;
+    text-align: right;
+  }
+}

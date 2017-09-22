@@ -1,0 +1,14 @@
+.test-container {
+  max-width: 600px;
+  margin: 0 auto;
+  
+  .test-container-header {
+    padding: 12px;
+    background-color: #EEE;
+  }
+  .test-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}

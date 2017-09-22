@@ -1,0 +1,13 @@
+<div class="test-container">
+  <div class="test-container-header">
+    <p>Num tests: {{numTests}}</p>
+    <p>
+      <button id="execute-all-texts" data-cmd="execute-all-texts">Run all tests</button>
+    </p>
+  </div>
+  <ul class="test-list">
+    {{#each testsContext}}
+      {{> tpl-test}}
+    {{/each}}
+  </ul>
+</div>
