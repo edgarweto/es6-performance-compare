@@ -21,17 +21,32 @@ function buildApp(tests) {
   
   var testContainerToHtml = require("../templates/tpl-test-container.hbs");
   document.getElementById('app').innerHTML = testContainerToHtml(appContext);
+
+  // clicks
+  testsContext.forEach(connectTest);
+
+  
 }
 
 function buildTestTplContext(test, idx) {
   return {
+    id: getTestId(idx),
     title: test.title,
     code1: test.code1,
     code2: test.code2
   };
 }
 
+function getTestId(idx) {
+  return 'test-' + idx;
+}
 
+function connectTest(test) {
+  var $test = document.getElementById(test.id);
+  $test.onclick = function () {
+    console.log("Run test " + test.id);
+  };
+}
 
 
 
