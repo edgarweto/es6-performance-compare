@@ -2,8 +2,6 @@
 import {tests as performanceTests} from './performanceTests.js';
 import Handlebars from 'handlebars';
 
-//require("../css/test-container.scss");
-
 import style from '../styles/main.scss';
 
 buildApp(performanceTests);
@@ -33,23 +31,97 @@ function buildTestTplContext(test, idx) {
     id: getTestId(idx),
     title: test.title,
     code1: test.code1,
-    code2: test.code2
+    code2: test.code2,
+    first: test.first,
+    second: test.second
   };
 }
 
 function getTestId(idx) {
   return 'test-' + idx;
 }
+function getTestValuesIds(testIdx, idx) {
+  return {
+    milliseconds: `test${testIdx}-ms-${idx}`,
+    relative: `test${testIdx}-rel-${idx}`
+  };
+}
 
 function connectTest(test) {
-  var $test = document.getElementById(test.id);
-  $test.onclick = function () {
-    console.log("Run test " + test.id);
-  };
+  var testItem = wrapTest(test);
+  testItem.init();
 }
 
 
 
+import {fTestDouble as tester} from './tester.js';
+
+function runTest(test, callback) {
+  const N_LOOP_REPETITIONS = 800;
+  const N_INNER_REPETITIONS = 200;
+
+
+  const res = tester(test.first, test.second, N_INNER_REPETITIONS, N_LOOP_REPETITIONS),
+    ratio = (100 * res.avDuration1 / res.avDuration2).toFixed(2);
+
+  if (typeof callback === 'function') {
+    callback(res);
+  }
+}
+
+function wrapTest(test) {
+  var valueIds1 = getTestValuesIds(1, test.id),
+    valueIds2 = getTestValuesIds(2, test.id);
+
+  var $test = document.getElementById(test.id),
+    $values1 = {
+      milliseconds: document.getElementById(valueIds1.milliseconds),
+      relative: document.getElementById(valueIds1.relative)
+    },
+    $values2 = {
+      milliseconds: document.getElementById(valueIds2.milliseconds),
+      relative: document.getElementById(valueIds2.relative)
+    };
+
+  var wrapTest = {
+    init: function () {
+      $values1.milliseconds.innerHTML = 0;
+      $values1.relative.innerHTML = '0 %';
+
+      $values2.milliseconds.innerHTML = 0;
+      $values2.relative.innerHTML = '0 %';
+
+      var $btn = document.getElementById(`execute-text-${test.id}`);
+      $btn.onclick = this.onRunTest.bind(this);
+    },
+    beginTest: function () {
+      $test.classList.add('running');
+    },
+    endTest: function () {
+      $test.classList.remove('running');
+    },
+    onRunTest: function () {
+      wrapTest.beginTest();
+      console.log("Run test " + test.id);
+
+      // Change to requestAnimationFrame
+      setTimeout(function () {
+        runTest(test, function (result) {
+          wrapTest.endTest();
+          console.log(result);
+
+          $values1.milliseconds.innerHTML = result.avDuration1;
+          $values1.relative.innerHTML = '0 %';
+
+          $values2.milliseconds.innerHTML = result.avDuration2;
+          $values2.relative.innerHTML = '0 %';
+        });
+      }, 100);
+    }
+  };
+
+  return wrapTest;
+}
 
 
 /*

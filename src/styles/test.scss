@@ -28,7 +28,6 @@
         display: inline-block;
         padding: 4px;
         margin: 0;
-        border: 1px solid #ccc;
         width: 46%;
       }
     }
@@ -38,4 +37,11 @@
     padding: 4px 12px;
     text-align: right;
   }
+}
+
+.test.running {
+  background-color: #EFEFEF;
+  color: #ccc;
+
+  
 }

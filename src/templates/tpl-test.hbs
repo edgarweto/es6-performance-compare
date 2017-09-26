@@ -11,14 +11,16 @@
     </div>
     <div class="test-results">
       <div class="test-result test-1">
-        Total: 0 ms
+        <div class="milliseconds">Total: <span class="value" id="test1-ms-{{id}}"></span> ms</div>
+        <div class="relative">Rel: <span class="value" id="test1-rel-{{id}}"></span></div>
       </div>
       <div class="test-result test-2">
-        Total: 0 ms
+        <div class="milliseconds">Total: <span class="value" id="test2-ms-{{id}}"></span> ms</div>
+        <div class="relative">Rel: <span class="value" id="test2-rel-{{id}}"></span></div>
       </div>
     </div>
   </div>
   <div class="test-footer">
-    <button id="execute-text" data-cmd="execute-text">Run</button>
+    <button id="execute-text-{{id}}" data-cmd="execute-text">Run</button>
   </div>
 </li>
