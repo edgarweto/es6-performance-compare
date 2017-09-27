@@ -11,24 +11,24 @@ function buildApp(tests) {
   
   // Obtain a suitable param object for each handlebar test and
   // group for the app template tpl-test-container
-  var testsContext = tests.map(buildTestTplContext),
+  var testsContexts = tests.map(buildTestTplContext),
     appContext = {
       numTests: tests.length,
-      testsContext: testsContext
+      testsContexts: testsContexts
     };
   
   var testContainerToHtml = require("../templates/tpl-test-container.hbs");
   document.getElementById('app').innerHTML = testContainerToHtml(appContext);
 
   // clicks
-  testsContext.forEach(connectTest);
+  testsContexts.forEach(connectTest);
 
   
 }
 
 function buildTestTplContext(test, idx) {
   return {
-    id: getTestId(idx),
+    id: idx,
     title: test.title,
     code1: test.code1,
     code2: test.code2,
@@ -37,18 +37,11 @@ function buildTestTplContext(test, idx) {
   };
 }
 
-function getTestId(idx) {
-  return 'test-' + idx;
-}
-function getTestValuesIds(testIdx, idx) {
-  return {
-    milliseconds: `test${testIdx}-ms-${idx}`,
-    relative: `test${testIdx}-rel-${idx}`
-  };
-}
 
-function connectTest(test) {
-  var testItem = wrapTest(test);
+import TestWidget from './testWidget.js';
+
+function connectTest(testContext) {
+  var testItem = new TestWidget(testContext, runTest);
   testItem.init();
 }
 
@@ -67,60 +60,6 @@ function runTest(test, callback) {
   if (typeof callback === 'function') {
     callback(res);
   }
-}
-
-function wrapTest(test) {
-  var valueIds1 = getTestValuesIds(1, test.id),
-    valueIds2 = getTestValuesIds(2, test.id);
-
-  var $test = document.getElementById(test.id),
-    $values1 = {
-      milliseconds: document.getElementById(valueIds1.milliseconds),
-      relative: document.getElementById(valueIds1.relative)
-    },
-    $values2 = {
-      milliseconds: document.getElementById(valueIds2.milliseconds),
-      relative: document.getElementById(valueIds2.relative)
-    };
-
-  var wrapTest = {
-    init: function () {
-      $values1.milliseconds.innerHTML = 0;
-      $values1.relative.innerHTML = '0 %';
-
-      $values2.milliseconds.innerHTML = 0;
-      $values2.relative.innerHTML = '0 %';
-
-      var $btn = document.getElementById(`execute-text-${test.id}`);
-      $btn.onclick = this.onRunTest.bind(this);
-    },
-    beginTest: function () {
-      $test.classList.add('running');
-    },
-    endTest: function () {
-      $test.classList.remove('running');
-    },
-    onRunTest: function () {
-      wrapTest.beginTest();
-      console.log("Run test " + test.id);
-
-      // Change to requestAnimationFrame
-      setTimeout(function () {
-        runTest(test, function (result) {
-          wrapTest.endTest();
-          console.log(result);
-
-          $values1.milliseconds.innerHTML = result.avDuration1;
-          $values1.relative.innerHTML = '0 %';
-
-          $values2.milliseconds.innerHTML = result.avDuration2;
-          $values2.relative.innerHTML = '0 %';
-        });
-      }, 100);
-    }
-  };
-
-  return wrapTest;
 }
 
 
