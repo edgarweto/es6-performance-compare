@@ -16,6 +16,7 @@ module.exports = {
       loaders: ['style-loader', 'css-loader', 'sass-loader']
     }]
   },
+  devtool: "inline-eval-cheap-source-map",
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({

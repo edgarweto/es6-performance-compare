@@ -1,6 +1,8 @@
 
 import {tests as performanceTests} from './performanceTests.js';
-import Handlebars from 'handlebars';
+
+//var Handlebars = require('handlebars-template-loader/runtime');
+//var Handlebars = require("./file.handlebars");
 
 import style from '../styles/main.scss';
 
@@ -17,13 +19,21 @@ function buildApp(tests) {
       testsContexts: testsContexts
     };
   
+  // Handlebars.registerHelper("initTestWidget", function (a, b) {
+  //   console.log("initTestWidget", a, b);
+
+  //   return "";
+  // });
+
   var testContainerToHtml = require("../templates/tpl-test-container.hbs");
   document.getElementById('app').innerHTML = testContainerToHtml(appContext);
 
-  // clicks
-  testsContexts.forEach(connectTest);
+  document.addEventListener("DOMContentLoaded", function () {
+    // clicks
+    testsContexts.forEach(connectTest);
+    
+  });
 
-  
 }
 
 function buildTestTplContext(test, idx) {

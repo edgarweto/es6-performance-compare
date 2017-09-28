@@ -1,4 +1,4 @@
-<li class="test" id="{{id}}">
+<li class="test" id="test-{{id}}">
   <div class="test-header">{{title}}</div>
   <div class="test-body">
     <div class="test-description">
@@ -23,4 +23,7 @@
   <div class="test-footer">
     <button id="execute-text-{{id}}" data-cmd="execute-text">Run</button>
   </div>
+  {{#initTestWidget}}
+    <div>eo</div>
+  {{/initTestWidget}}
 </li>

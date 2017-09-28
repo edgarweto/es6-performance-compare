@@ -2,7 +2,6 @@
 export default class TestWidget {
   
   constructor(testContext, tester) {
-    debugger;
     this._testContext = testContext;
     this._testId = testContext.id;
     this._slots = [this._getTestValuesIds(1, this._testId), this._getTestValuesIds(2, this._testId)];
@@ -20,6 +19,8 @@ export default class TestWidget {
   }
   
   init() {
+    return;
+    
     this._$test = document.getElementById(this._getTestId(this._testId));
 
     this._$slots = [{
@@ -39,17 +40,17 @@ export default class TestWidget {
 
     this._$runBtn = document.getElementById(`execute-text-${test.id}`);
     this._$runBtn.onclick = this.onRunTest.bind(this);
-  },
+  }
 
-  _beginTest: function () {
+  _beginTest () {
     this._$test.classList.add('running');
-  },
+  }
 
-  _endTest: function () {
+  _endTest () {
     this._$test.classList.remove('running');
-  },
+  }
 
-  _onRunTest: function () {
+  _onRunTest () {
     this._beginTest();
     console.log("Run test " + this._testId);
 
