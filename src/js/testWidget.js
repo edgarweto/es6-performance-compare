@@ -19,7 +19,6 @@ export default class TestWidget {
   }
   
   init() {
-    debugger;
     
     this._$test = document.getElementById(this._getTestId(this._testId));
 
@@ -38,8 +37,8 @@ export default class TestWidget {
     this._$slots[1].milliseconds.innerHTML = 0;
     this._$slots[1].relative.innerHTML = '0 %';
 
-    this._$runBtn = document.getElementById(`execute-text-${test.id}`);
-    this._$runBtn.onclick = this.onRunTest.bind(this);
+    this._$runBtn = document.getElementById(`execute-text-${this._testId}`);
+    this._$runBtn.onclick = this._onRunTest.bind(this);
   }
 
   _beginTest () {
@@ -52,29 +51,15 @@ export default class TestWidget {
 
   _onRunTest () {
     this._beginTest();
-    console.log("Run test " + this._testId);
 
     // Let the UI to be updated
-    window.requestAnimationFrame(this._runTest.bind(this));
+    //window.requestAnimationFrame(this._runTest.bind(this));
 
-
-
-    // setTimeout(function () {
-    //   runTest(this._testContext, function (result) {
-    //     wrapTest.endTest();
-    //     console.log(result);
-
-    //     $values1.milliseconds.innerHTML = result.avDuration1;
-    //     $values1.relative.innerHTML = '0 %';
-
-    //     $values2.milliseconds.innerHTML = result.avDuration2;
-    //     $values2.relative.innerHTML = '0 %';
-    //   });
-    // }, 100);
+    setTimeout(this._runTest.bind(this), 100);
   }
 
   _onTestFinished (result) {
-    this.endTest();
+    this._endTest();
     console.log(result);
 
     this._$slots[0].milliseconds.innerHTML = result.avDuration1;

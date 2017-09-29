@@ -1,17 +1,10 @@
-
-import {tests as performanceTests} from './performanceTests.js';
-
-//var Handlebars = require('handlebars-template-loader/runtime');
-//var Handlebars = require("./file.handlebars");
-
-var Handlebars = require('handlebars-template-loader/runtime');
-
 import style from '../styles/main.scss';
+import {tests as performanceTests} from './performanceTests.js';
 
 buildApp(performanceTests);
 
-
 function buildApp(tests) {
+  var Handlebars = require('handlebars-template-loader/runtime');
   
   // Obtain a suitable param object for each handlebar test and
   // group for the app template tpl-test-container
@@ -21,24 +14,14 @@ function buildApp(tests) {
       testsContexts: testsContexts
     };
   
-  console.log("testsContexts:", testsContexts);
-
-  Handlebars.registerPartial('tpl-test', "../templates/tpl-test.hbs");
-
-  Handlebars.registerHelper("initTestContainer", function (a, b) {
-    console.log("initTestContainer", a, b);
+  Handlebars.registerPartial('tpl-test', require("../templates/tpl-test.hbs"));
 
 
-    //testsContexts.forEach(connectTest);
+  Handlebars.registerHelper("initTest", function (testContext) {
 
-    return "";
-  });
+    console.log("init test " + testContext.id);
 
-  Handlebars.registerHelper("initTest", function (a, b) {
-    console.log("initTest", a, b);
-
-
-    //testsContexts.forEach(connectTest);
+    //connectTest(testContext);
 
     return "";
   });
@@ -47,7 +30,10 @@ function buildApp(tests) {
   document.getElementById('app').innerHTML = testContainerToHtml(appContext);
 
   document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOMContentLoaded");    
+    console.log("DOMContentLoaded");
+
+
+    testsContexts.forEach(connectTest);
   });
 
 }
@@ -65,6 +51,7 @@ function buildTestTplContext(test, idx) {
 
 
 import TestWidget from './testWidget.js';
+import runTest from './tester.js';
 
 function connectTest(testContext) {
   var testItem = new TestWidget(testContext, runTest);
@@ -73,20 +60,6 @@ function connectTest(testContext) {
 
 
 
-import {fTestDouble as tester} from './tester.js';
-
-function runTest(test, callback) {
-  const N_LOOP_REPETITIONS = 800;
-  const N_INNER_REPETITIONS = 200;
-
-
-  const res = tester(test.first, test.second, N_INNER_REPETITIONS, N_LOOP_REPETITIONS),
-    ratio = (100 * res.avDuration1 / res.avDuration2).toFixed(2);
-
-  if (typeof callback === 'function') {
-    callback(res);
-  }
-}
 
 
 /*
