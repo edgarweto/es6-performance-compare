@@ -19,7 +19,7 @@ export default class TestWidget {
   }
   
   init() {
-    return;
+    debugger;
     
     this._$test = document.getElementById(this._getTestId(this._testId));
 

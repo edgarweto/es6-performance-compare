@@ -4,6 +4,8 @@ import {tests as performanceTests} from './performanceTests.js';
 //var Handlebars = require('handlebars-template-loader/runtime');
 //var Handlebars = require("./file.handlebars");
 
+var Handlebars = require('handlebars-template-loader/runtime');
+
 import style from '../styles/main.scss';
 
 buildApp(performanceTests);
@@ -19,19 +21,33 @@ function buildApp(tests) {
       testsContexts: testsContexts
     };
   
-  // Handlebars.registerHelper("initTestWidget", function (a, b) {
-  //   console.log("initTestWidget", a, b);
+  console.log("testsContexts:", testsContexts);
 
-  //   return "";
-  // });
+  Handlebars.registerPartial('tpl-test', "../templates/tpl-test.hbs");
+
+  Handlebars.registerHelper("initTestContainer", function (a, b) {
+    console.log("initTestContainer", a, b);
+
+
+    //testsContexts.forEach(connectTest);
+
+    return "";
+  });
+
+  Handlebars.registerHelper("initTest", function (a, b) {
+    console.log("initTest", a, b);
+
+
+    //testsContexts.forEach(connectTest);
+
+    return "";
+  });
 
   var testContainerToHtml = require("../templates/tpl-test-container.hbs");
   document.getElementById('app').innerHTML = testContainerToHtml(appContext);
 
   document.addEventListener("DOMContentLoaded", function () {
-    // clicks
-    testsContexts.forEach(connectTest);
-    
+    console.log("DOMContentLoaded");    
   });
 
 }

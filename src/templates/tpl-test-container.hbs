@@ -6,13 +6,12 @@
     </p>
   </div>
   <ul class="test-list">
-    {{#each testsContext}}
-      {{> tpl-test}}
+    {{#each testsContexts}}
+      {{#> tpl-test}}{{/tpl-test}}
+      {{#initTestContainer}}{{/initTestContainer}}
     {{/each}}
   </ul>
 
-  {{#initTestWidget}}
-    <div>eo</div>
-  {{/initTestWidget}}
+  
 
 </div>

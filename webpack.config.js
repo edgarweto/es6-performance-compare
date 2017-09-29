@@ -9,8 +9,8 @@ module.exports = {
   },
   module: {
     loaders: [{
-      test: /\.hbs$/,
-      loader: 'handlebars-loader'
+      test: /\.hbs/,
+      loader: "handlebars-template-loader"
     }, {
       test: /\.scss$/,
       loaders: ['style-loader', 'css-loader', 'sass-loader']
@@ -52,10 +52,5 @@ module.exports = {
   output: {
     filename: 'assets/[name].bundle.js',
     path: path.resolve(__dirname, 'deploy')
-  },
-  resolve: {
-    alias: {
-       handlebars: 'handlebars/dist/handlebars.min.js'
-    }
   }
 };
