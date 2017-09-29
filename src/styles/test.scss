@@ -1,11 +1,11 @@
 .test {
-  background-color: #EEE;
-  
+  background-color: #d6d6d6;
+  border: 1px solid #bbbaba;
   margin: 6px 0;
 
   .test-header {
     font-weight: bold;
-    padding: 2px 4px;
+    padding: 4px 16px;
   }
   .test-body {
     .test-description {
@@ -16,9 +16,16 @@
         display: inline-block;
         padding: 4px;
         margin: 0;
-        border: 1px solid #ccc;
+        background-color: #fff;
         width: 46%;
         overflow: hidden;
+      }
+
+      .test-code.faster {
+        background-color: #3bea62;
+      }
+      .test-code.slower {
+        background-color: #ea5d3b;
       }
     }
 
@@ -30,6 +37,10 @@
         padding: 4px;
         margin: 0;
         width: 46%;
+
+        .relative .value {
+          font-weight: bold;
+        }
       }
     }
   }
@@ -38,11 +49,20 @@
     padding: 4px 12px;
     text-align: right;
   }
+
 }
 
 .test.running {
   background-color: #EFEFEF;
   color: #ccc;
+}
 
-  
+.equivalents {
+  background-color: #3bea62;
+}
+.faster {
+  background-color: #3bea62;
+}
+.slower {
+  background-color: #ea5d3b;
 }

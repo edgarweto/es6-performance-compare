@@ -49,13 +49,15 @@ var fTestDouble = function (f1, f2, nInnerRepetitions, nRepetitions) {
 
 
 
-export default function runTest(test, callback) {
+export default function runTest(test, callback, config) {
   const N_LOOP_REPETITIONS = 800;
   const N_INNER_REPETITIONS = 200;
+  const auxConfig = {
+    nInnerRepetitions: config && config.nInnerRepetitions || N_INNER_REPETITIONS,
+    nLoopRepetitions: config && config.nLoopRepetitions || N_LOOP_REPETITIONS,
+  };
 
-
-  const res = fTestDouble(test.first, test.second, N_INNER_REPETITIONS, N_LOOP_REPETITIONS),
-    ratio = (100 * res.avDuration1 / res.avDuration2).toFixed(2);
+  const res = fTestDouble(test.first.bind(test), test.second.bind(test), auxConfig.nInnerRepetitions, auxConfig.nLoopRepetitions);
 
   if (typeof callback === 'function') {
     callback(res);

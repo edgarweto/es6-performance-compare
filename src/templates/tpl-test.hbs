@@ -2,26 +2,25 @@
   <div class="test-header">{{title}}</div>
   <div class="test-body">
     <div class="test-description">
-      <pre class="test-code test-code-1">
+      <pre class="test-code" id="test-{{id}}-code-1">
         {{code1}}
       </pre>
-      <pre class="test-code test-code-2">
+      <pre class="test-code" id="test-{{id}}-code-2">
         {{code2}}
       </pre>
     </div>
     <div class="test-results">
-      <div class="test-result test-1">
-        <div class="milliseconds">Total: <span class="value" id="test1-ms-{{id}}"></span> ms</div>
-        <div class="relative">Rel: <span class="value" id="test1-rel-{{id}}"></span></div>
+      <div class="test-result" id="test-{{id}}-result-1">
+        <div class="milliseconds">Average cost: <span class="value" id="test1-ms-{{id}}"></span></div>
+        <div class="relative"><span class="value" id="test1-rel-{{id}}"></span></div>
       </div>
-      <div class="test-result test-2">
-        <div class="milliseconds">Total: <span class="value" id="test2-ms-{{id}}"></span> ms</div>
-        <div class="relative">Rel: <span class="value" id="test2-rel-{{id}}"></span></div>
+      <div class="test-result" id="test-{{id}}-result-2">
+        <div class="milliseconds">Average cost: <span class="value" id="test2-ms-{{id}}"></span></div>
+        <div class="relative"><span class="value" id="test2-rel-{{id}}"></span></div>
       </div>
     </div>
   </div>
   <div class="test-footer">
     <button id="execute-text-{{id}}" data-cmd="execute-text">Run</button>
   </div>
-  {{#initTest this}}{{/initTest}}
 </li>
