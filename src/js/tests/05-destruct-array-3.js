@@ -1,5 +1,5 @@
 export const test = {
-  title: 'Destructuring arrays I',
+  title: 'Destructuring arrays III',
   code1:   
 `
 var u = [0, 1, 2, 3, 4],
@@ -10,7 +10,7 @@ u[2] = a + b;`,
   code2:
 `
 var u = [0, 1, 2, 3, 4],
-  [a, b] = u;
+  [a, ,b,...rest] = u;
 
 u[2] = a + b;`,
 
@@ -23,8 +23,8 @@ u[2] = a + b;`,
     u[2] = a + b;
   },
   second: function () {
-     var u = [0, 1, 2, 3, 4],
-      [a, b] = u;
+    var u = [0, 1, 2, 3, 4],
+      [a, ,b,...rest] = u;
 
     u[2] = a + b;
   }

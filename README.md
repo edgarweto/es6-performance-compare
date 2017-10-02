@@ -23,3 +23,14 @@
 * Mat | Set | WeakMap | WeakSet
 * Symbols
 
+2.3 TODO's
+
+* Add service for popularity
+* Sort by popuparity
+* Add service for uploading tests results along with machine, browser and env data
+
+* Improve performance measure: loop until percentual differences doesn't change from iteration to iteration
+* UI: run on webworkers in order to leave UI responsive
+* UI: progress bars
+* UI: cancel running tests
+

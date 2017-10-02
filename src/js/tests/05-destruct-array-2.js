@@ -1,16 +1,16 @@
 export const test = {
-  title: 'Destructuring arrays I',
+  title: 'Destructuring arrays II',
   code1:   
 `
 var u = [0, 1, 2, 3, 4],
-  a = u[0], b = u[1];
+  a = u[0], b = u[2];
 
 u[2] = a + b;`,
 
   code2:
 `
 var u = [0, 1, 2, 3, 4],
-  [a, b] = u;
+  [a, ,b] = u;
 
 u[2] = a + b;`,
 
@@ -18,13 +18,13 @@ u[2] = a + b;`,
   first: function () {
     var u = [0, 1, 2, 3, 4],
       a = u[0],
-      b = u[1];
+      b = u[2];
 
     u[2] = a + b;
   },
   second: function () {
-     var u = [0, 1, 2, 3, 4],
-      [a, b] = u;
+    var u = [0, 1, 2, 3, 4],
+      [a, ,b] = u;
 
     u[2] = a + b;
   }
