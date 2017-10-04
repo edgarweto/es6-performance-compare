@@ -1,6 +1,6 @@
-const a = 'a',
-  b = 'b',
-  x = 'a+b+c';
+const a = '${a}',
+  b = '${b}',
+  x = '${a}${b}${c}';
 
 
 export const test = {
@@ -31,7 +31,7 @@ var a = 'one',
     var a = 'one',
       b = `${a}two`,
       c = `${b}three`,
-      d = `{a+b+c}four`;
+      d = `${a}${b}${c}four`;
   }
 
 };

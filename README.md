@@ -25,6 +25,11 @@
 
 2.3 TODO's
 
+* Align tests with mozilla-developers examples of ES6
+* Add a reference of num times a task can be done in one frame (one of 1/60 seconds)
+
+===
+
 * Add service for popularity
 * Sort by popuparity
 * Add service for uploading tests results along with machine, browser and env data

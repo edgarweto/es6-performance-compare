@@ -2,9 +2,12 @@
   <div class="test-container-header">
     <p>Num tests: {{numTests}}</p>
     <p>Each test consists of two functions to be compared. The test is run over {{nLoopRepetitions}} iterations. In each one, each function is repeated {{nInnerRepetitions}} times. Then cost time is added and averaged.
-    <p>
-      <button id="execute-all-texts" data-cmd="execute-all-texts">Run all tests</button>
     </p>
+    <p>At the of each test, we show how many times the snippet could be executed in one second, and how many in one frame (at 60FPS).</p>
+
+    <!-- p>
+      <button id="execute-all-texts" data-cmd="execute-all-texts">Run all tests</button>
+    </p -->
   </div>
   <ul class="test-list">
     {{#each testsContexts}}

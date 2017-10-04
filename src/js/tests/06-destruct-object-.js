@@ -1,5 +1,10 @@
+/**
+ * ES2016
+ */
+
+/*
 export const test = {
-  title: 'Basic assignment II',
+  title: 'Destructuring objects IV',
   code1:   
 `
 var u = {a: 1, b: 2, c: 3},
@@ -10,7 +15,7 @@ var u = {a: 1, b: 2, c: 3},
   code2:
 `
 var u = {a: 1, b: 2, c: 3},
-  {a, b, c} = u;`,
+  {a, b, ...rest} = u;`,
 
   first: function () {
     var u = {a: 1, b: 2, c: 3},
@@ -20,7 +25,8 @@ var u = {a: 1, b: 2, c: 3},
   },
   second: function () {
     var u = {a: 1, b: 2, c: 3},
-      {a, b, c} = u;
+      {a, b, ...rest} = u;
   }
 
 };
+*/

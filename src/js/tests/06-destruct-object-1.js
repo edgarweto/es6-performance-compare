@@ -1,5 +1,5 @@
 export const test = {
-  title: 'Destructuring objects I',
+  title: 'Basic assignment',
   code1:   
 `
 var u = {a: 1, b: 2},

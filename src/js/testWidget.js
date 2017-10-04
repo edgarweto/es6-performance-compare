@@ -43,6 +43,14 @@ export default class TestWidget {
       result: document.getElementById(testParts2.result)
     }];
 
+    this._$testEquivalences = [{
+      eqSeconds: document.getElementById(testParts1.eqSeconds),
+      eqFrames: document.getElementById(testParts1.eqFrames)
+    }, {
+      eqSeconds: document.getElementById(testParts2.eqSeconds),
+      eqFrames: document.getElementById(testParts2.eqFrames)
+    }];
+
     this._$runBtn = document.getElementById(`execute-text-${this._testId}`);
     this._$runBtn.onclick = this._onRunTest.bind(this);
   }
@@ -73,7 +81,9 @@ export default class TestWidget {
   _getTestPartsIds(testId, testIdx) {
     return {
       code: `test-${testId}-code-${testIdx}`,
-      result: `test-${testId}-result-${testIdx}`
+      result: `test-${testId}-result-${testIdx}`,
+      eqSeconds: `test-${testId}-per-sec-${testIdx}`,
+      eqFrames: `test-${testId}-per-frame-${testIdx}`
     };
   }
   /**
@@ -174,6 +184,12 @@ export default class TestWidget {
         this._$testBodys[1].result.classList.add('faster');
       }
     }
+
+    // Print equivalences
+    this._$testEquivalences[0].eqSeconds.innerHTML = this._equivalenceSeconds(result.avDuration1);
+    this._$testEquivalences[0].eqFrames.innerHTML = this._equivalenceFrames(result.avDuration1);
+    this._$testEquivalences[1].eqSeconds.innerHTML = this._equivalenceSeconds(result.avDuration2);
+    this._$testEquivalences[1].eqFrames.innerHTML = this._equivalenceFrames(result.avDuration2);
   }
 
   /**
@@ -253,6 +269,30 @@ export default class TestWidget {
       r = d / m;
 
     return r < this._MAX_COMPARABLE_VALUES;
+  }
+
+  /**
+   * @description Returns number of times an action that spans for ms milliseconds can be
+   *  performed in one second.
+   * @param {float} ms, milliseconds
+   *
+   * @return {int}
+   * @private
+   */
+  _equivalenceSeconds (ms) {
+    return Math.floor(1000 / ms);
+  }
+
+  /**
+   * @description Returns number of times an action that spans for ms milliseconds can be
+   *  performed in one frame (at 60 FPS).
+   * @param {float} ms, milliseconds
+   *
+   * @return {int}
+   * @private
+   */
+  _equivalenceFrames (ms) {
+    return Math.floor(1000 / (60 * ms));
   }
 
   /**
