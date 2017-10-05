@@ -30,6 +30,8 @@
 
 ===
 
+* Add online tool for running user code tests (what if I want to know how many times a snipped could be run in a frame at 60FPS?)
+
 * Add service for popularity
 * Sort by popuparity
 * Add service for uploading tests results along with machine, browser and env data

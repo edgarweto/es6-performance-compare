@@ -152,10 +152,10 @@ export default class TestWidget {
     this._$test.classList.remove('equivalents');
 
     ['faster', 'slower'].forEach(function (className) {
-      this._$testBodys[0].code.classList.remove('faster');
-      this._$testBodys[0].result.classList.remove('faster');
-      this._$testBodys[1].code.classList.remove('faster');
-      this._$testBodys[1].result.classList.remove('faster');
+      this._$testBodys[0].code.classList.remove(className);
+      this._$testBodys[0].result.classList.remove(className);
+      this._$testBodys[1].code.classList.remove(className);
+      this._$testBodys[1].result.classList.remove(className);
     }.bind(this));
   }
 

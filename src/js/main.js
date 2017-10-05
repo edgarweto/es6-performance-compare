@@ -35,10 +35,11 @@ function buildTestTplContext(test, idx) {
   return {
     id: idx,
     title: test.title,
-    code1: test.code1,
+    code1: test.first.toString(), //test.code1,
     code2: test.code2,
     first: test.first,
-    second: test.second
+    second: test.second,
+    refs: test.refs
   };
 }
 

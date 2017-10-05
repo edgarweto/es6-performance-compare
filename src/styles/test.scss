@@ -4,8 +4,21 @@
   margin: 6px 0;
 
   .test-header {
-    font-weight: bold;
     padding: 4px 16px;
+    margin-bottom: 4px;
+
+    .caption {
+      font-weight: bold;
+    }
+    .references {
+      float: right;
+      list-style: none;
+
+      li {
+        display: inline-block;
+        margin-left: 4px;
+      }
+    }
   }
   .test-body {
     .test-description {

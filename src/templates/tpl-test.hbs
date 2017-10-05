@@ -1,5 +1,13 @@
 <li class="test" id="test-{{id}}">
-  <div class="test-header">{{title}}</div>
+  <div class="test-header">
+    <span class="caption">{{title}}</span>
+    <ul class="references">
+      {{#each refs}}
+        <li><a href="{{url}}">{{name}}</a></li>
+      {{/each}}
+    </ul>
+
+  </div>
   <div class="test-body">
     <div class="test-description">
       <pre class="test-code" id="test-{{id}}-code-1">
