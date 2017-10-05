@@ -150,6 +150,13 @@ export default class TestWidget {
   _resetTestUI () {
     this._$test.classList.remove('running');
     this._$test.classList.remove('equivalents');
+
+    ['faster', 'slower'].forEach(function (className) {
+      this._$testBodys[0].code.classList.remove('faster');
+      this._$testBodys[0].result.classList.remove('faster');
+      this._$testBodys[1].code.classList.remove('faster');
+      this._$testBodys[1].result.classList.remove('faster');
+    }.bind(this));
   }
 
   /**
