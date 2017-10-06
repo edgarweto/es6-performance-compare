@@ -21,9 +21,9 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Exploring bits of ES5 vs ES6 performance',
-      inject: false,
+      inject: 'body',
+      hash: true,
       template: require('html-webpack-template'),
-      //filename: 'assets/templates/index.hbs'
 
       // Optional
       appMountId: 'app',

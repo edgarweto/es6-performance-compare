@@ -43,7 +43,6 @@ function buildTestTplContext(test, idx) {
   };
 }
 
-
 import TestWidget from './testWidget.js';
 import runTest from './tester.js';
 
