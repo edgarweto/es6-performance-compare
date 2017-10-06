@@ -174,20 +174,20 @@ export default class TestWidget {
     this._$slots[1].relative.innerHTML = ratios.second;
 
     if (ratios.equivalent) {
-        this._$testBodys[0].code.classList.add('faster');
+        //this._$testBodys[0].code.classList.add('faster');
         this._$testBodys[0].result.classList.add('faster');
-        this._$testBodys[1].code.classList.add('faster');
+        //this._$testBodys[1].code.classList.add('faster');
         this._$testBodys[1].result.classList.add('faster');
     } else {
       if (result.avDuration1 < result.avDuration2) {
-        this._$testBodys[0].code.classList.add('faster');
+        //this._$testBodys[0].code.classList.add('faster');
         this._$testBodys[0].result.classList.add('faster');
-        this._$testBodys[1].code.classList.add('slower');
+        //this._$testBodys[1].code.classList.add('slower');
         this._$testBodys[1].result.classList.add('slower');
       } else {
-        this._$testBodys[0].code.classList.add('slower');
+        //this._$testBodys[0].code.classList.add('slower');
         this._$testBodys[0].result.classList.add('slower');
-        this._$testBodys[1].code.classList.add('faster');
+        //this._$testBodys[1].code.classList.add('faster');
         this._$testBodys[1].result.classList.add('faster');
       }
     }

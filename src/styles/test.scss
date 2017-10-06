@@ -27,9 +27,7 @@
       .test-code {
         text-align: initial;
         display: inline-block;
-        padding: 4px;
         margin: 0;
-        background-color: #fff;
         width: 46%;
         overflow: hidden;
       }
@@ -47,12 +45,18 @@
 
       .test-result {
         display: inline-block;
-        padding: 4px;
+        padding: 4px 0;
         margin: 0;
         width: 46%;
 
         .relative .value {
           font-weight: bold;
+        }
+
+        .per-second, .per-frame {
+          float: left;
+          margin-right: 4px;
+          font-size: 0.9em;
         }
       }
     }
@@ -68,6 +72,10 @@
 .test.running {
   background-color: #EFEFEF;
   color: #ccc;
+
+  .test-code {
+    opacity: 0.5;
+  }
 }
 
 .equivalents {
