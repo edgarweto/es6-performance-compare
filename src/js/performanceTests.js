@@ -16,6 +16,7 @@ import {test as test6_5} from './tests/06-destruct-object-5.js';
 import {test as test6_6} from './tests/06-destruct-object-6.js';
 import {test as test6_7} from './tests/06-destruct-object-7.js';
 import {test as test6_8} from './tests/06-destruct-object-8.js';
+import {test as test6_9} from './tests/06-destruct-object-9.js';
 
 
 export const tests = [
@@ -36,5 +37,6 @@ export const tests = [
   test6_5,
   test6_6,
   test6_7,
-  test6_8
+  test6_8,
+  test6_9
 ];

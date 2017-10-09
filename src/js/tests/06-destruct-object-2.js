@@ -1,5 +1,5 @@
 export const test = {
-  title: 'Basic assignment II',
+  title: 'Object: Basic assignment II',
 
   first: function () {
     var u = {a: 1, b: 2, c: 3},

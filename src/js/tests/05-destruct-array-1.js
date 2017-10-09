@@ -1,18 +1,19 @@
 export const test = {
-  title: 'Destructuring arrays I',
-  
-  first: function () {
-    var u = [0, 1, 2, 3, 4],
-      a = u[0],
-      b = u[1];
+  title: 'Array: Basic variable assignment',
+  refs: [{
+    name: 'developer.mozilla',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Basic_variable_assignment'
+  }],
 
-    u[2] = a + b;
+  first: function () {
+    var foo = ['one', 'two', 'three'];
+    var one = foo['one'],
+      two = foo['two'],
+      three = foo['three'];
   },
   second: function () {
-     var u = [0, 1, 2, 3, 4],
-      [a, b] = u;
-
-    u[2] = a + b;
+    var foo = ['one', 'two', 'three'];
+    var [one, two, three] = foo;
   }
 
 };

@@ -1,18 +1,21 @@
 export const test = {
-  title: 'Destructuring arrays II',
+  title: 'Array: Assignment separate from declaration',
+  refs: [{
+    name: 'developer.mozilla',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Assignment_separate_from_declaration'
+  }],
   
   first: function () {
-    var u = [0, 1, 2, 3, 4],
-      a = u[0],
-      b = u[2];
+    var a, b, x = [1, 2];
 
-    u[2] = a + b;
+    a = x.length > 0 ? x[0] : undefined;
+    b = x.length > 1 ? x[1] : undefined;
+
   },
   second: function () {
-    var u = [0, 1, 2, 3, 4],
-      [a, ,b] = u;
+    var a, b;
 
-    u[2] = a + b;
+    [a, b] = [1, 2];
   }
 
 };

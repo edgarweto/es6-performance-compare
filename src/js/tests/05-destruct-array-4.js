@@ -1,17 +1,21 @@
 export const test = {
-  title: 'Destructuring arrays IV',
-  
-  first: function () {
-    var u = [0, 1, 2, 3, 4],
-      [a, ,b,...rest] = u;
+  title: 'Array: Swapping variables',
+  refs: [{
+    name: 'developer.mozilla',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Swapping_variables'
+  }],
 
-    u[2] = a + b;
+  first: function () {
+    var a = 1, b = 3;
+    
+    var temp = a;
+    a = b;
+    b = temp;
   },
   second: function () {
-    var u = [0, 1, 2, 3, 4];
-    let [a, ,b,...rest] = u;
+    var a = 1, b = 3;
 
-    u[2] = a + b;
+    [a, b] = [b, a];
   }
 
 };

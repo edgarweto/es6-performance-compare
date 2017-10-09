@@ -1,15 +1,20 @@
 export const test = {
-  title: 'Destructuring arrays V',
-  
+  title: 'Array: Ignoring some returned values',
+  refs: [{
+    name: 'developer.mozilla',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Ignoring_some_returned_values'
+  }],
+
   first: function () {
-    var a, b, x = [1];
-    a = x.length > 0 ? x[0] : 5;
-    b = x.length > 1 ? x[1] : 7;
+    var x = [0, 1, 2, 3];
+
+    var a = x.length > 0 ? x[0] : undefined;
+    var b = x.length > 2 ? x[1] : undefined;
   },
   second: function () {
-    var a, b, x = [1];
+    var x = [0, 1, 2, 3];
 
-    [a=5, b=7] = x;
+    var [a, , b] = x;
   }
 
 };

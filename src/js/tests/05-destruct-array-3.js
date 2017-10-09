@@ -1,18 +1,20 @@
 export const test = {
-  title: 'Destructuring arrays III',
+  title: 'Array: Default values',
+  refs: [{
+    name: 'developer.mozilla',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Default_values'
+  }],
   
   first: function () {
-    var u = [0, 1, 2, 3, 4],
-      a = u[0],
-      b = u[1];
-
-    u[2] = a + b;
+    var a, b, x = [1];
+    
+    a = x.length > 0 ? x[0] : 5;
+    b = x.length > 1 ? x[1] : 7;
   },
   second: function () {
-    var u = [0, 1, 2, 3, 4],
-      [a, ,b,...rest] = u;
+    var a, b;
 
-    u[2] = a + b;
+    [a=5, b=7] = [1];
   }
 
 };

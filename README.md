@@ -1,10 +1,10 @@
 #IDEAS
 
+* Code exampes come basically from 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators'
 
 ## TODOs
 
 * Align tests with mozilla-developers examples of ES6
-* Add a reference of num times a task can be done in one frame (one of 1/60 seconds)
 * Add a collapsible index, in order to navigate easily to each text
 
 ===
@@ -15,6 +15,7 @@
 
 * Add service for popularity and sort by popularity
 * Add service for uploading tests results along with machine, browser and env data
+* Add service for adding new tests
 
 * Improve performance measure: loop until percentual differences doesn't change from iteration to iteration
 * UI: run on webworkers in order to leave UI responsive
