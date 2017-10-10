@@ -1,6 +1,8 @@
 #IDEAS
 
-* Code exampes come basically from 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators'
+* Following this implementations:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_2015_support_in_Mozilla
+
 
 ## TODOs
 

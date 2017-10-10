@@ -41,7 +41,7 @@ module.exports = {
           sizes: '180x180'
         },
         {
-          href: '/favicon-32x32.png',
+          href: '../images/favicon-32x32.png',
           rel: 'icon',
           sizes: '32x32',
           type: 'image/png'
