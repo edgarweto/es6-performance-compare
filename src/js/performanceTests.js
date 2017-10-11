@@ -8,6 +8,8 @@ import {test as exprOpConst_2} from './tests/expressions-and-operators/const/02-
 
 import {test as exprOpSpread_1} from './tests/expressions-and-operators/spread-operator/01-spread-function-call.js';
 import {test as exprOpSpread_2} from './tests/expressions-and-operators/spread-operator/02-spread-array-literals.js';
+import {test as exprOpSpread_3} from './tests/expressions-and-operators/spread-operator/03-spread-array-copy.js';
+import {test as exprOpSpread_4} from './tests/expressions-and-operators/spread-operator/04-spread-array-copy-large.js';
 
 //import {test as test1} from './tests/expressions-and-operators/01-var-const.js';
 //import {test as test3} from './tests/expressions-and-operators/03-let-in-for.js';
@@ -42,6 +44,8 @@ export const tests = [
 
   exprOpSpread_1,
   exprOpSpread_2,
+  exprOpSpread_3,
+  exprOpSpread_4,
 
   test4,
   test5_1,

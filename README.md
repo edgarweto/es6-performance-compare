@@ -1,8 +1,14 @@
+# THANKS TO
+*https://github.com/faisalman/ua-parser-js
+*https://highlightjs.org/
+
+
 #IDEAS
 
 * Following this implementations:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_2015_support_in_Mozilla
 
+* Interesting: http://jsben.ch, jsperf
 
 ## TODOs
 

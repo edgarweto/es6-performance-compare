@@ -14,6 +14,9 @@ module.exports = {
     }, {
       test: /\.scss$/,
       loaders: ['style-loader', 'css-loader', 'sass-loader']
+    // }, {
+    //   test: require.resolve('./src/third-party/ua-parser.min.js'),
+    //   use: 'exports-loader?UAParser'
     }]
   },
   devtool: "inline-eval-cheap-source-map",

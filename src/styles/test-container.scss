@@ -5,6 +5,17 @@
   .test-container-header {
     padding: 12px;
     background-color: #EEE;
+
+    .environment {
+      list-style: none;
+      font-weight: bold;
+      > li {
+        list-style: none;
+      }
+      .value {
+        font-weight: normal;
+      }
+    }
   }
   .test-list {
     list-style: none;

@@ -9,7 +9,7 @@ export const test = {
     var parts = ['shoulders', 'knees']; 
     var lyrics = ['head', 'and', 'toes'];
 
-    // Insert inside position
+    // Think about a better implementation
     for (var i = 0, n = parts.length; i < n; i++) {
       lyrics.splice(1 + i, 0, parts[i]);
     }
