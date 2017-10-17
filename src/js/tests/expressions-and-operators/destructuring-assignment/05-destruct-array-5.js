@@ -1,9 +1,12 @@
 export const test = {
-  title: 'Array: Ignoring some returned values',
-  refs: [{
-    name: 'developer.mozilla',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Ignoring_some_returned_values'
-  }],
+  meta: {
+    title: 'Array: Ignoring some returned values',
+    parent: 'Expressions and operators',
+    refs: [{
+      name: 'developer.mozilla',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Ignoring_some_returned_values'
+    }]
+  },
 
   first: function () {
     var x = [0, 1, 2, 3];

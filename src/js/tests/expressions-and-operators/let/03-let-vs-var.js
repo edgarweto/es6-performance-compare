@@ -1,6 +1,9 @@
 export const test = {
-  title: 'let: let vs var',
-  refs: [],
+  meta: {
+    title: 'let: let vs var',
+    parent: 'Expressions and operators',
+    refs: []
+  },
 
   first: function () {
     var a = 1;

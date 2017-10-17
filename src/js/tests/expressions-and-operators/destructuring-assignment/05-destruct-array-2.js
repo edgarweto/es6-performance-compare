@@ -1,9 +1,12 @@
 export const test = {
-  title: 'Array: Assignment separate from declaration',
-  refs: [{
-    name: 'developer.mozilla',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Assignment_separate_from_declaration'
-  }],
+  meta: {
+    title: 'Array: Assignment separate from declaration',
+    parent: 'Expressions and operators',
+    refs: [{
+      name: 'developer.mozilla',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Assignment_separate_from_declaration'
+    }]
+  },
   
   first: function () {
     var a, b, x = [1, 2];

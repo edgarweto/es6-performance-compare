@@ -1,9 +1,12 @@
 export const test = {
-  title: 'const: scoping rules',
-  refs: [{
-    name: 'developer.mozilla',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const'
-  }],
+  meta: {
+    title: 'const: scoping rules',
+    parent: 'Expressions and operators',
+    refs: [{
+      name: 'developer.mozilla',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const'
+    }]
+  },
 
   first: function () {
     var x = 1;

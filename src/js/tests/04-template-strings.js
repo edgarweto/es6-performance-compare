@@ -1,7 +1,10 @@
 export const test = {
-  title: 'Template strings',
+  meta: {
+    title: 'Template strings',
+    parent: 'Expressions and operators',
+    refs: []
+  },
 
-  
   first: function () {
     var a = 'one',
       b = a + 'two',

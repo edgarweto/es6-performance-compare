@@ -1,6 +1,9 @@
 export const test = {
-  title: 'let: nested scoping',
-  refs: [],
+  meta: {
+    title: 'let: nested scoping',
+    parent: 'Expressions and operators',
+    refs: []
+  },
 
   first: function () {
     var x = 1;

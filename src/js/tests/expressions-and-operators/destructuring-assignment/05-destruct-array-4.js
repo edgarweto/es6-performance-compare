@@ -1,9 +1,12 @@
 export const test = {
-  title: 'Array: Swapping variables',
-  refs: [{
-    name: 'developer.mozilla',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Swapping_variables'
-  }],
+  meta: {
+    title: 'Array: Swapping variables',
+    parent: 'Expressions and operators',
+    refs: [{
+      name: 'developer.mozilla',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Swapping_variables'
+    }]
+  },
 
   first: function () {
     var a = 1, b = 3;

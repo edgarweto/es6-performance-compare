@@ -1,5 +1,9 @@
 export const test = {
-  title: 'Object: Basic assignment II',
+  meta: {
+    title: 'Object: Basic assignment II',
+    parent: 'Expressions and operators',
+    refs: []
+  },
 
   first: function () {
     var u = {a: 1, b: 2, c: 3},

@@ -1,8 +1,8 @@
 <li class="test" id="test-{{id}}">
   <div class="test-header">
-    <span class="caption">{{title}}</span>
+    <span class="caption">{{meta.title}}</span>
     <ul class="references">
-      {{#each refs}}
+      {{#each meta.refs}}
         <li><a href="{{url}}">{{name}}</a></li>
       {{/each}}
     </ul>

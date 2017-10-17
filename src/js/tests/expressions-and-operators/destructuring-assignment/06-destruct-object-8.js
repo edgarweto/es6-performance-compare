@@ -1,9 +1,12 @@
 export const test = {
-  title: 'For of iteration and destructuring',
-  refs: [{
-    name: 'developer.mozilla',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#For_of_iteration_and_destructuring'
-  }],
+  meta: {
+    title: 'For of iteration and destructuring',
+    parent: 'Expressions and operators',
+    refs: [{
+      name: 'developer.mozilla',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#For_of_iteration_and_destructuring'
+    }]
+  },
   
   first: function () {
     var people = [{

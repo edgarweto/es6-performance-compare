@@ -1,9 +1,12 @@
 export const test = {
-  title: 'Nested object and array destructuring',
-  refs: [{
-    name: 'developer.mozilla',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Nested_object_and_array_destructuring'
-  }],
+  meta: {
+    title: 'Nested object and array destructuring',
+    parent: 'Expressions and operators',
+    refs: [{
+      name: 'developer.mozilla',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Nested_object_and_array_destructuring'
+    }]
+  },
 
   first: function () {
     var metadata = {

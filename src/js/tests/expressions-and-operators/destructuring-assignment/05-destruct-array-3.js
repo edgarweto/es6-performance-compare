@@ -1,9 +1,12 @@
 export const test = {
-  title: 'Array: Default values',
-  refs: [{
-    name: 'developer.mozilla',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Default_values'
-  }],
+  meta: {
+    title: 'Array: Default values',
+    parent: 'Expressions and operators',
+    refs: [{
+      name: 'developer.mozilla',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Default_values'
+    }]
+  },
   
   first: function () {
     var a, b, x = [1];

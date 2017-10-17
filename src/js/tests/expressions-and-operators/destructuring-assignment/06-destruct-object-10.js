@@ -1,9 +1,12 @@
 export const test = {
-  title: 'Rest in Object Destructuring',
-  refs: [{
-    name: 'developer.mozilla',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Rest_in_Object_Destructuring'
-  }],
+  meta: {
+    title: 'Rest in Object Destructuring',
+    parent: 'Expressions and operators',
+    refs: [{
+      name: 'developer.mozilla',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Rest_in_Object_Destructuring'
+    }]
+  },
   
   first: function () {
     let x = {a: 10, b: 20, c: 30, d: 40};

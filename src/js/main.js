@@ -61,12 +61,11 @@ function getEnvironmentDescriptor() {
 function buildTestTplContext(test, idx) {
   return {
     id: idx,
-    title: test.title,
+    meta: test.meta,
     code1: test.first.toString(),
     code2: test.second.toString(),
     first: test.first,
-    second: test.second,
-    refs: test.refs
+    second: test.second
   };
 }
 

@@ -1,9 +1,12 @@
 export const test = {
-  title: 'Array: Assigning the rest of an array to a variable',
-  refs: [{
-    name: 'developer.mozilla',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Assigning_the_rest_of_an_array_to_a_variable'
-  }],
+  meta: {
+    title: 'Array: Assigning the rest of an array to a variable',
+    parent: 'Expressions and operators',
+    refs: [{
+      name: 'developer.mozilla',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Assigning_the_rest_of_an_array_to_a_variable'
+    }]
+  },
 
   first: function () {
     var a, b, x = [1, 2, 3];

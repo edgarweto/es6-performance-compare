@@ -1,9 +1,12 @@
 export const test = {
-  title: 'Array: Basic variable assignment',
-  refs: [{
-    name: 'developer.mozilla',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Basic_variable_assignment'
-  }],
+  meta: {
+    title: 'Array: Basic variable assignment',
+    parent: 'Expressions and operators',
+    refs: [{
+      name: 'developer.mozilla',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Basic_variable_assignment'
+    }]
+  },
 
   first: function () {
     var foo = ['one', 'two', 'three'];

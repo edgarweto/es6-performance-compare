@@ -1,9 +1,12 @@
 export const test = {
-  title: 'Spread op: array literals',
-  refs: [{
-    name: 'developer.mozilla',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator#Spread_in_array_literals'
-  }],
+  meta: {
+    title: 'Spread op: array literals',
+    parent: 'Expressions and operators',
+    refs: [{
+      name: 'developer.mozilla',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator#Spread_in_array_literals'
+    }]
+  },
   
   first: function () {
     var parts = ['shoulders', 'knees']; 

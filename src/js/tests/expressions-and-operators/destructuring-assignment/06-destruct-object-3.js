@@ -1,9 +1,12 @@
 export const test = {
-  title: 'Object: Assignment without declaration',
-  refs: [{
-    name: 'developer.mozilla',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Assignment_without_declaration'
-  }],
+  meta: {
+    title: 'Object: Assignment without declaration',
+    parent: 'Expressions and operators',
+    refs: [{
+      name: 'developer.mozilla',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Assignment_without_declaration'
+    }]
+  },
 
   first: function () {
     var u = {a: 1, b: 2},
