@@ -1,16 +1,21 @@
 
-import {test as exprOpLet_1} from './tests/expressions-and-operators/let/01-let-scoping-rules.js';
-import {test as exprOpLet_2} from './tests/expressions-and-operators/let/02-let-nested-scoping.js';
-import {test as exprOpLet_3} from './tests/expressions-and-operators/let/03-let-vs-var.js';
+import {test as exprOpLet_1} from './tests/statements-and-declarations/let/01-let-scoping-rules.js';
+import {test as exprOpLet_2} from './tests/statements-and-declarations/let/02-let-nested-scoping.js';
+import {test as exprOpLet_3} from './tests/statements-and-declarations/let/03-let-vs-var.js';
 
-import {test as exprOpConst_1} from './tests/expressions-and-operators/const/01-const-scoping-rules.js';
-import {test as exprOpConst_2} from './tests/expressions-and-operators/const/02-const-nested-scoping.js';
+import {test as exprOpConst_1} from './tests/statements-and-declarations/const/01-const-scoping-rules.js';
+import {test as exprOpConst_2} from './tests/statements-and-declarations/const/02-const-nested-scoping.js';
 
 import {test as exprOpSpread_1} from './tests/expressions-and-operators/spread-operator/01-spread-function-call.js';
 import {test as exprOpSpread_2} from './tests/expressions-and-operators/spread-operator/02-spread-array-literals.js';
 import {test as exprOpSpread_3} from './tests/expressions-and-operators/spread-operator/03-spread-array-copy.js';
 import {test as exprOpSpread_4} from './tests/expressions-and-operators/spread-operator/04-spread-array-copy-large.js';
 import {test as exprOpSpread_5} from './tests/expressions-and-operators/spread-operator/05-spread-array-concat.js';
+
+import {test as typArrInt8Arr_1} from './tests/built-in-objects/typed-arrays/01-int8array.js';
+import {test as typArrInt8Arr_2} from './tests/built-in-objects/typed-arrays/02-int8array-2.js';
+import {test as typArrInt8Arr_3} from './tests/built-in-objects/typed-arrays/03-int32array.js';
+import {test as typArrDataView_4} from './tests/built-in-objects/typed-arrays/04-dataview.js';
 
 
 
@@ -46,6 +51,11 @@ export const tests = [
   exprOpSpread_3,
   exprOpSpread_4,
   exprOpSpread_5,
+
+  typArrInt8Arr_1,
+  typArrInt8Arr_2,
+  typArrInt8Arr_3,
+  typArrDataView_4,
 
   test4,
   test5_1,

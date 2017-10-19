@@ -1,7 +1,7 @@
 export const test = {
   meta: {
     title: 'let: let vs var',
-    parent: 'Expressions and operators',
+    parent: 'Statements and declarations',
     refs: []
   },
 

@@ -1,10 +1,10 @@
 export const test = {
   meta: {
-    title: 'let: scoping rules',
-    parent: 'Expressions and operators',
+    title: 'const: scoping rules',
+    parent: 'Statements and declarations',
     refs: [{
       name: 'developer.mozilla',
-      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Scoping_rules_2'
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const'
     }]
   },
 
@@ -17,9 +17,9 @@ export const test = {
     }
   },
   second: function () {
-    let x = 1;
+    const x = 1;
     if (true) {
-      let x = 2;
+      const x = 2;
     }
   }
 

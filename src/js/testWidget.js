@@ -226,35 +226,35 @@ export default class TestWidget {
    * @private
    */
   _calcRatios (value1, value2) {
-    let ratios = {
+    const ratios = {
       first: '',
       second: ''
     };
 
     if (value1 < value2) {
-      let ratio1 = value2 / value1 - 1,
+      const ratio1 = value2 / value1 - 1,
         x = (100 * ratio1).toFixed(2);
 
-      let ratio2 = 1 - value1 / value2,
+      const ratio2 = 1 - value1 / value2,
         y = (100 * ratio2).toFixed(2);
 
       const times = Math.floor(0.5 + value2 / value1);
-      ratios.first = `${x}% (~${times}x) faster`;
-      ratios.second = `${y}% slower`;
+      ratios.first = `${y}% (~${times}x) faster`;
+      ratios.second = `${x}% slower`;
     } else if (value1 === value2) {
       ratios.first = `equivalent`;
       ratios.second = `equivalent`;
     } else {
-      let ratio1 = value1 / value2 - 1,
+      const ratio1 = value1 / value2 - 1,
         x = (100 * ratio1).toFixed(2);
 
-      let ratio2 = 1 - value2 / value1,
+      const ratio2 = 1 - value2 / value1,
         y = (100 * ratio2).toFixed(2);
 
-      ratios.first = `${x}% slower`;
+      ratios.first = `${y}% slower`;
 
       const times = Math.floor(0.5 + value2 / value1);
-      ratios.second = `${y}% (~${times}x) faster`;
+      ratios.second = `${x}% (~${times}x) faster`;
     }
 
     ratios.equivalent = this._areComparableValues(value1, value2);

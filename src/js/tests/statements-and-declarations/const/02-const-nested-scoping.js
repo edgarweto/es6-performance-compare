@@ -1,7 +1,7 @@
 export const test = {
   meta: {
-    title: 'let: nested scoping',
-    parent: 'Expressions and operators',
+    title: 'const: nested scoping',
+    parent: 'Statements and declarations',
     refs: []
   },
 
@@ -24,13 +24,13 @@ export const test = {
     }
   },
   second: function () {
-    let x = 1;
+    const x = 1;
     if (true) {
-      let x = 2;
+      const x = 2;
       if (true) {
-        let x = 3;
+        const x = 3;
         if (true) {
-          let x = 4;
+          const x = 4;
         }
       }
     }
