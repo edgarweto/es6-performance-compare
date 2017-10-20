@@ -3,8 +3,8 @@ export const test = {
     title: 'Typed Arrays: DataView',
     parent: 'Built-in objects',
     refs: [{
-      name: 'Int32Array',
-      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array'
+      name: 'DataView',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView'
     }, {
       name: 'TypedArray',
       url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray'

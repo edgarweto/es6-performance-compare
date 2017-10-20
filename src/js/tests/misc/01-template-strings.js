@@ -1,8 +1,14 @@
 export const test = {
   meta: {
     title: 'Template strings',
-    parent: 'Expressions and operators',
-    refs: []
+    parent: 'Misc',
+    refs: [{
+      name: '',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals'
+    }, {
+      name: 'hacks.mozilla',
+      url: 'https://hacks.mozilla.org/2015/05/es6-in-depth-template-strings-2/'
+    }]
   },
 
   first: function () {
