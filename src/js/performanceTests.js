@@ -22,6 +22,9 @@ import {test as typArrDataView_4} from './tests/built-in-objects/typed-arrays/04
 import {test as miscTplString_1} from './tests/misc/01-template-strings.js';
 import {test as miscTplString_2} from './tests/misc/02-template-strings-tags.js';
 
+import {test as miscSets_1} from './tests/misc/03-sets.js';
+import {test as miscMaps_1} from './tests/misc/04-maps-primitives.js';
+
 
 import {test as test5_1} from './tests/expressions-and-operators/destructuring-assignment/05-destruct-array-1.js';
 import {test as test5_2} from './tests/expressions-and-operators/destructuring-assignment/05-destruct-array-2.js';
@@ -62,6 +65,9 @@ export const tests = [
 
   miscTplString_1,
   miscTplString_2,
+
+  miscSets_1,
+  miscMaps_1,
 
   test5_1,
   test5_2,

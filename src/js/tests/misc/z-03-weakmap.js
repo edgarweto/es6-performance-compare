@@ -3,7 +3,7 @@ export const test = {
     title: 'Template strings: tags',
     parent: 'Misc',
     refs: [{
-      name: 'developer.mozilla',
+      name: '',
       url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals'
     }, {
       name: 'hacks.mozilla',
