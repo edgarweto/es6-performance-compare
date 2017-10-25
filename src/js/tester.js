@@ -1,11 +1,14 @@
 /**
  * @description Measures how long does it takes to execute a function n times
+ *
  * @param {string} testName Test name used as identifier
  * @param {function} callback The function to be measured
  * @param {int} nRepetitions Loop size
+ *
  * @return {int} milliseconds
+ * @private
  */
-var fTestSingle = function (testName, callback, nRepetitions) {
+var _fTestSingle = function (testName, callback, nRepetitions) {
   performance.mark(`${testName}-start`);
 
   let i = 0;
@@ -23,7 +26,18 @@ var fTestSingle = function (testName, callback, nRepetitions) {
   return measures[0].duration;
 };
 
-var fTestDouble = function (f1, f2, nInnerRepetitions, nRepetitions) {
+/**
+ * @description
+ *
+ * @param {function} f1 The function to be measured
+ * @param {function} f2 The function to be measured
+ * @param {int} nInnerRepetitions Loop size for each function
+ * @param {int} nRepetitions Loop size for external loop
+ *
+ * @return {object} Summary of average durations
+ * @private
+ */
+var _fTestDouble = function (f1, f2, nInnerRepetitions, nRepetitions) {
   let i, j,
     d1 = 0,
     d2 = 0;
@@ -31,10 +45,10 @@ var fTestDouble = function (f1, f2, nInnerRepetitions, nRepetitions) {
   for (i = 0; i < nRepetitions; i++) {
 
     for (j = 0; j < nInnerRepetitions; j++) {
-      d1 += fTestSingle('test1', f1, nInnerRepetitions);
+      d1 += _fTestSingle('test1', f1, nInnerRepetitions);
     }
     for (j = 0; j < nInnerRepetitions; j++) {
-      d2 += fTestSingle('test2', f2, nInnerRepetitions);
+      d2 += _fTestSingle('test2', f2, nInnerRepetitions);
     }
   }
 
@@ -47,8 +61,13 @@ var fTestDouble = function (f1, f2, nInnerRepetitions, nRepetitions) {
   };
 };
 
-
-
+/**
+ * @description Performs the test, comparing two functions.
+ *
+ * @param {object} test Object describing the test
+ * @param {function} callback Function to be called once the test ends
+ * @param {object} config Config for test (loop sizes, etc.)
+ */
 export default function runTest(test, callback, config) {
   const N_LOOP_REPETITIONS = 800;
   const N_INNER_REPETITIONS = 200;
@@ -57,7 +76,7 @@ export default function runTest(test, callback, config) {
     nLoopRepetitions: config && config.nLoopRepetitions || N_LOOP_REPETITIONS,
   };
 
-  const res = fTestDouble(test.first.bind(test), test.second.bind(test), auxConfig.nInnerRepetitions, auxConfig.nLoopRepetitions);
+  const res = _fTestDouble(test.first.bind(test), test.second.bind(test), auxConfig.nInnerRepetitions, auxConfig.nLoopRepetitions);
 
   if (typeof callback === 'function') {
     callback(res);

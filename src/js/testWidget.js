@@ -1,8 +1,17 @@
-
+/**
+ * @fileoverview Implements test widget, a wrapper for each test that gives functionality
+ *  and presentation logics.
+ *
+ */
 export default class TestWidget {
   
   /**
    * @description Saves essential data from current test
+   *
+   * @param {object} testContext Parameters for the test
+   * @param {object} tester The orchestrator for testing
+   * @param {int} nRepetitions Number of repetitions of external loop
+   * @param {int} nInnerRepetitions Inside external loop, number of reps for each function
    */
   constructor(testContext, tester, nRepetitions, nInnerRepetitions) {
     this._testContext = testContext;
@@ -57,6 +66,7 @@ export default class TestWidget {
 
   /**
    * @description Returns the DOM ids of some test elements
+   *
    * @param {int} testIdx 0 for the first (left), 1 for the second (right)
    * @param {int} testId Index of the text
    *
@@ -72,6 +82,7 @@ export default class TestWidget {
   
   /**
    * @description Returns the DOM ids of some test elements
+   *
    * @param {int} testIdx 0 for the first (left), 1 for the second (right)
    * @param {int} testId Index of the text
    *
@@ -86,6 +97,7 @@ export default class TestWidget {
       eqFrames: `test-${testId}-per-frame-${testIdx}`
     };
   }
+
   /**
    * @description Returns the DOM id of a test
    * @param {int} testId An index used as identifier
