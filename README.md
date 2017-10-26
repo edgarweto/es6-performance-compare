@@ -36,7 +36,9 @@ https://hacks.mozilla.org/category/es6-in-depth/
 ## TODOs
 
 - Less difficult
-  * Add a collapsible index, in order to navigate easily to each text
+  * Improve current tests (ensure each old-js part is equivalent to its es6 counterpart)
+  * Add more tests
+  * Add a collapsible index, in order to navigate easily to each test
   * UI: progress bars
   * UI: cancel running tests
 
@@ -46,7 +48,6 @@ https://hacks.mozilla.org/category/es6-in-depth/
   * Add service for popularity and sort by popularity
   * Add service for uploading tests results along with machine, browser and env data
   * Add service for adding new tests
-  * UI: run on webworkers in order to leave UI responsive (would affect measurements?)
 
 
 ## Thanks to
