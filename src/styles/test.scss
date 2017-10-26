@@ -65,6 +65,13 @@
   .test-footer {
     padding: 4px 12px;
     text-align: right;
+
+    button {
+      padding: 6px 8px;
+      font-size: 1em;
+      color: #ff5722;
+      cursor: pointer;
+    }
   }
 
 }
